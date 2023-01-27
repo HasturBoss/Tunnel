@@ -282,6 +282,7 @@ install_file() {
 install_clash() {
   install -d "$DAT_PATH"
   install_file clash
+  install -d "${DAT_PATH}/folder"
   # If the file exists, Country.mmdb will not be installed or updated
   if [[ ! -f "${DAT_PATH}/Country.mmdb" ]]; then
     install_file Country.mmdb
@@ -347,9 +348,10 @@ check_update() {
 }
 
 remove_clash() {
-  if [[ -n "$(pidof clash)" ]]; then
+  if [[ -f "$CLASH" ]]; then
     stop_clash
     "rm" "${CLASH_PATH}/clash.service"
+    "rm" "${CLASH}"
     "rm" -rf "${DAT_PATH}"
   else
     echo 'error: Clash is not installed.'
