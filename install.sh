@@ -351,7 +351,7 @@ remove_clash() {
   if [[ -n "$(pidof clash)" ]] || [[ -z "$(pidof clash)" ]]; then
     stop_clash
     "rm" "${CLASH_PATH}/clash.service"
-    "rm" "/usr/loocal/bin/clash"
+    "rm" "/usr/local/bin/clash"
     "rm" -rf "${DAT_PATH}"
   else
     echo 'error: Clash is not installed.'
