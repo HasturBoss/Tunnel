@@ -348,10 +348,10 @@ check_update() {
 }
 
 remove_clash() {
-  if [[ -f "$CLASH" ]]; then
+  if [[ -n "$(pidof clash)" ]] || [[ -z "$(pidof clash)" ]]; then
     stop_clash
     "rm" "${CLASH_PATH}/clash.service"
-    "rm" "${CLASH}"
+    "rm" "/usr/loocal/bin/clash"
     "rm" -rf "${DAT_PATH}"
   else
     echo 'error: Clash is not installed.'
@@ -414,7 +414,7 @@ main() {
   fi
   # Determine if Clash is running
   if systemctl list-unit-files | grep -qw 'clash'; then
-    if [[ -n "$(pidof clash)" ]]; then
+    if [[ -n "$(pidof clash)" ]] || [[ -z "$(pidof clash)" ]]; then
       stop_clash
       CLASH_RUNNING='1'
     fi
