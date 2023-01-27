@@ -351,7 +351,7 @@ remove_clash() {
   if [[ -n "$(pidof clash)" ]] || [[ -z "$(pidof clash)" ]]; then
     stop_clash
     "rm" "${CLASH_PATH}/clash.service"
-    "rm" "/usr/local/bin/clash"
+    echo -e "\033[31mManually remove clash: /usr/local/bin/clash\033[0m"
     "rm" -rf "${DAT_PATH}"
   else
     echo 'error: Clash is not installed.'
@@ -397,7 +397,7 @@ main() {
     install_software 'curl' 'curl'
     get_version
     NUMBER="$?"
-    if [[ "$NUMBER" -eq '0' ]] || [[ "$FORCE" -eq '1' ]] || [[ "$NUMBER" -eq 2 ]]; then
+    if [[ "$NUMBER" -eq '0' ]] || [[ "$NUMBER" -eq 2 ]]; then
       echo "info: Installing Clash $RELEASE_VERSION for $(uname -m)"
       download_clash
       if [[ "$?" -eq '1' ]]; then
