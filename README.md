@@ -1,7 +1,7 @@
 # Tunnel
 Github and Gitee, Run "Clash"
 
-* Use Clash
+* Use Clash: http://clash.razord.top/
 ```Shell
 Install:
 chmod +x ./Tunnel/install.sh
