@@ -1,7 +1,6 @@
-![LICENSE](https://img.shields.io/github/license/HasturBoss/Tunnel)
-
 # Tunnel
 Github and Gitee, Run "Clash"
+![LICENSE](https://img.shields.io/github/license/HasturBoss/Tunnel)
 
 * Use Clash: http://clash.razord.top/
 ```Shell
