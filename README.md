@@ -1,3 +1,5 @@
+![LICENSE](https://img.shields.io/github/license/HasturBoss/Tunnel)
+
 # Tunnel
 Github and Gitee, Run "Clash"
 
