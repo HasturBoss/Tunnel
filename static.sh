@@ -53,10 +53,10 @@ modify_static_ip() {
   echo -e "\033[31mPlease select network card driver and static ip: \033[0m"
   read -p "network card driver: " ncd
   read -p "static ip: " sip
-  sed -i "s/<drivers>/${ncd}/g" ./Tunnel/sources/static.txt
-  sed -i "s/<ip>/${sip}/g" ./Tunnel/sources/static.txt
-  tr -d "\015" <./Tunnel/sources/static.txt> ./Tunnel/sources/static_bak.txt
-  cat ./Tunnel/sources/static_bak.txt >> /etc/network/interfaces
+  sed -i "s/<drivers>/${ncd}/g" ./Tunnel/sources/static-localhost-network.txt
+  sed -i "s/<ip>/${sip}/g" ./Tunnel/sources/static-localhost-network.txt
+  tr -d "\015" <./Tunnel/sources/static-localhost-network.txt> ./Tunnel/sources/static-localhost-network_bak.txt
+  cat ./Tunnel/sources/static-localhost-network_bak.txt >> /etc/network/interfaces
   echo "The network card driver and static ip have been changed!"
 }
 
